@@ -3,9 +3,6 @@
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
 
-trigger:
-- main
-
 pool:
   vmImage: macos-14
 
@@ -23,7 +20,7 @@ steps:
     connection: MyGitHubServiceConnection
     userRepository: w3c/aria-at-automation-driver
     defaultVersionType: specificTag
-    version: $(aria_at_automation_driver_version)
+    version: v0.0.1-beta
     downloadPath: aria-at-automation-driver
 
 - task: Bash@3
