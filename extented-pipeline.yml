@@ -40,6 +40,20 @@ steps:
     targetType: 'inline'
     workingDirectory: aria-at-automation-driver/package/bin
     script: |
+      set -x
+      ./at-driver serve &
+      sleep 3
+      say "Hello world from say"
+      sleep 1
+      kill %%
+
+- task: Bash@3
+  displayName: say some stuff with custom voice (again)
+  inputs:
+    targetType: 'inline'
+    workingDirectory: aria-at-automation-driver/package/bin
+    script: |
+      set -x
       ./at-driver serve &
       sleep 3
       say "Hello world from say"
