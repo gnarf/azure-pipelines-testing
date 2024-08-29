@@ -35,6 +35,12 @@ steps:
       DEBUG=* ./bin/at-driver install --unattended
 
 - task: Bash@3
+  displayName: sleep for 3 minutes for testing purposes
+  inputs:
+    targetType: 'inline'
+    script: sleep 180
+
+- task: Bash@3
   displayName: say some stuff with custom voice
   inputs:
     targetType: 'inline'
